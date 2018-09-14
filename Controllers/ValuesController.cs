@@ -26,8 +26,9 @@ namespace TodoApi.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult Post([FromBody] string value)
         {
+            return Ok(true );
         }
 
         // PUT api/values/5
