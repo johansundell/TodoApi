@@ -10,6 +10,19 @@
                 "${workspaceFolder}/TodoApi.csproj"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "run",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "run",
+                "${workspaceFolder}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
