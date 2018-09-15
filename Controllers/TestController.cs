@@ -23,9 +23,16 @@ namespace TodoApi.Controllers
             i.text = "test4";
             l.Add( new TodoItem{ nummer = 3, text = "test3"});
             l.Add( i );
+            foreach (var y in l )
+            {
+                y.text = "sudde" + y.nummer;
+            }
             //test = test.Concat( new [] { new { nummer= 2, text = "test2"}});
             //return new string[] { "sudde1", "sudde2" };
-            return l.ToArray();
+            //List<TodoItem> Sorted = l.OrderBy(o=>o.nummer).ToList();
+            List<TodoItem> Sorted = l.OrderByDescending( o => o.nummer ).ToList();
+            //return l.ToArray();
+            return Sorted.ToArray();
         }
     }
 }
