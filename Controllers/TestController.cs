@@ -7,32 +7,32 @@ using TodoApi.Models;
 
 namespace TodoApi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class TestController : ControllerBase
-    {
-        // GET api/test
-        [HttpGet]
-        public ActionResult<IEnumerable<TodoItem>> Get()
-        {
-            var test = new TodoItem[] { new TodoItem{ nummer = 1, text = "test"} };
-            var t = test.Append( new TodoItem{nummer = 2, text ="test2" });
-            var l = t.ToList();
-            var i = new TodoItem();
-            i.nummer = 4;
-            i.text = "test4";
-            l.Add( new TodoItem{ nummer = 3, text = "test3"});
-            l.Add( i );
-            foreach (var y in l )
-            {
-                y.text = "sudde" + y.nummer;
-            }
-            //test = test.Concat( new [] { new { nummer= 2, text = "test2"}});
-            //return new string[] { "sudde1", "sudde2" };
-            //List<TodoItem> Sorted = l.OrderBy(o=>o.nummer).ToList();
-            List<TodoItem> Sorted = l.OrderByDescending( o => o.nummer ).ToList();
-            //return l.ToArray();
-            return Sorted.ToArray();
-        }
-    }
+	[Route("api/[controller]")]
+	[ApiController]
+	public class TestController : ControllerBase
+	{
+		// GET api/test
+		[HttpGet]
+		public ActionResult<IEnumerable<TodoItem>> Get()
+		{
+			var test = new TodoItem[] { new TodoItem{ nummer = 1, text = "test"} };
+			var t = test.Append( new TodoItem{nummer = 2, text ="test2" });
+			var l = t.ToList();
+			var i = new TodoItem();
+			i.nummer = 4;
+			i.text = "test4";
+			l.Add( new TodoItem{ nummer = 3, text = "test3"});
+			l.Add( i );
+			foreach (var y in l )
+			{
+				y.text = "sudde" + y.nummer;
+			}
+			//test = test.Concat( new [] { new { nummer= 2, text = "test2"}});
+			//return new string[] { "sudde1", "sudde2" };
+			//List<TodoItem> Sorted = l.OrderBy(o=>o.nummer).ToList();
+			List<TodoItem> Sorted = l.OrderByDescending( o => o.nummer ).ToList();
+			//return l.ToArray();
+			return Sorted.ToArray();
+		}
+	}
 }
